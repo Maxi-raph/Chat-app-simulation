@@ -8,15 +8,34 @@
   <title>HTML</title>
   
   <!-- HTML -->
-  
+<script src="https://kit.fontawesome.com/f884aaec02.js" crossorigin="anonymous"></script>  
+<script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Custom Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
-
-<body>
-  <p>Nothing to see here...</p>
-  <!-- Project -->
-  <script src="main.js"></script>
+<body class="bg-[url(/image/IMG_9469.jpeg)] bg-cover bg-no-repeat bg-center bg-fixed min-h-screen flex flex-col p-2">
+ <div id="container" class="w-full flex flex-col gap-2 overflow-y-auto h-[calc(100vh-100px)] pb-16 pt-3">
+  <div id="userPanel" class="will-change-[transform] fixed rounded-lg w-[300px] h-[130px] bottom-[78px] left-2 p-2 flex flex-col justify-between hidden">
+    <div id="user1" data-username="Alice" class="relative bg-[#F1F5F9] w-32 p-1 rounded-2xl  inline-flex items-center">
+      <span class="rounded-full bg-[#F59E0B] inline-flex justify-center items-center w-[40px] h-[40px] text-white text-3xl">A</span>
+      <span class="text-gray-900 text-md pl-2 font-bold">Alice</span>
+    </div>
+    
+    <div id="user2" data-username="Bob" class="relative bg-[#F1F5F9] w-32 p-1 rounded-2xl  mb-1 inline-flex items-center">
+      <span class="rounded-full bg-[#EF4444] inline-flex justify-center items-center w-[40px] h-[40px] text-white text-3xl">B</span>
+      <span class="text-gray-900 text-md pl-2 font-bold">Bob</span>
+    </div>
+  </div>
+</div>
+  <div class="w-[98%] bg-slate-200 rounded-lg p-2 flex justify-between items-center fixed bottom-4 left-1">
+    <span class="">
+      <i id="plusIcon" class="fa-solid fa-plus text-[25px]"></i>
+    </span>
+    <input type="text" id="message" class="w-[310px] h-[46px] rounded-full  shadow-2xl border border-gray-600 outline-none pl-3 pr-3 text-md font-bold" />
+    <i id="sendIcon" class="fa-solid fa-paper-plane text-[25px]"></i>
+  </div>
+    <script src="main.js"></script>
 </body>
+
 </html>
