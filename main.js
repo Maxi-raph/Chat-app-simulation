@@ -14,10 +14,12 @@ let storeDetails = JSON.parse(localStorage.getItem('details')) || []
 plusIcon.addEventListener('click', () => {
   user1Card.style.width = '8rem'
   user2Card.style.width = '8rem'
-  if (userPanel.style.display !== 'flex') {
-    userPanel.style.display = 'flex'
+  if (userPanel.classList.contains('hidden')) {
+    userPanel.classList.add('flex')
+    userPanel.classList.remove('hidden')
   } else {
-    userPanel.style.display = 'none'
+      userPanel.classList.add('hidden')
+      userPanel.classList.remove('flex')
   }
 })
 
@@ -32,12 +34,12 @@ user2Card.addEventListener('click', (e) => {
 
 user1Card.addEventListener('dblclick', (e) => {
   userDetails.name = e.currentTarget.dataset.username;
-  userPanel.style.display = 'none';
+  userPanel.classList.add('hidden')
   input.style.border = '1.7px #F59E0B solid'
 });
 user2Card.addEventListener('dblclick', (e) => {
   userDetails.name = e.currentTarget.dataset.username;
-  userPanel.style.display = 'none';
+  userPanel.classList.add('hidden')
   input.style.border = '1.7px #EF4444 solid'
 });
 
@@ -85,8 +87,8 @@ function sendMessage(userDetails) {
     let div = document.createElement('div')
     div.id = `user1Text${Date.now()}`
     div.className = 'mt-2 mb-2 bg-[#F59E0B] p-2 w-[65%] rounded-xl flex flex-col justify-between self-end ';
-    div.innerHTML = ` <span class="self-start mb-1 font-bold text-slate-200 text-md">${userDetails.name}</span>
-   <p class="text-white text-md font-bold">${userDetails.message}</p> 
+    div.innerHTML = `<span class="self-start mb-1 font-bold text-slate-100 text-sm">${userDetails.name}</span>
+   <p class="text-white text-md">${userDetails.message}</p> 
     <span class="self-end mt-1 text-slate-800 text-sm">${userDetails.date}</span>`
     container.appendChild(div)
   }
@@ -95,8 +97,8 @@ function sendMessage(userDetails) {
     div.id = `user2Text${Date.now()}`
     div.className = 'self-start mt-2 mb-2 bg-[#EF4444] p-2 w-[65%] rounded-xl flex flex-col justify-between'
     div.innerHTML = `
-  <span class="self-start mb-1 font-bold text-slate-200 text-md">${userDetails.name}</span>
-  <p class="text-white text-md font-bold">${userDetails.message}</p>
+  <span class="self-start mb-1 font-bold text-slate-100 text-sm">${userDetails.name}</span>
+  <p class="text-white text-md">${userDetails.message}</p>
   <span class="self-end mt-1 text-slate-800 text-sm">${userDetails.date}</span>`
     container.appendChild(div)
   }
